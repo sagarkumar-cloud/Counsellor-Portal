@@ -41,4 +41,61 @@ public class Counsellor {
     private LocalDate updateDate;
 
    // private List<EnquiryStudent> student;
+
+
+    public Integer getCounsellorId() {
+        return counsellorId;
+    }
+
+    public void setCounsellorId(Integer counsellorId) {
+        this.counsellorId = counsellorId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Long getPhno() {
+        return phno;
+    }
+
+    public void setPhno(Long phno) {
+        this.phno = phno;
+    }
+
+    public LocalDate getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(LocalDate createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public LocalDate getUpdateDate() {
+        return updateDate;
+    }
+
+    public void setUpdateDate(LocalDate updateDate) {
+        this.updateDate = updateDate;
+    }
 }

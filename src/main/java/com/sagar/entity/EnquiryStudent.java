@@ -41,4 +41,76 @@ public class EnquiryStudent {
     @ManyToOne
     @JoinColumn(name="counsellor_id")
     private Counsellor counsellor;
+
+    public Integer getEnquiryId() {
+        return enquiryId;
+    }
+
+    public void setEnquiryId(Integer enquiryId) {
+        this.enquiryId = enquiryId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Long getPhno() {
+        return phno;
+    }
+
+    public void setPhno(Long phno) {
+        this.phno = phno;
+    }
+
+    public String getClassMode() {
+        return classMode;
+    }
+
+    public void setClassMode(String classMode) {
+        this.classMode = classMode;
+    }
+
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public LocalDate getUpdateDate() {
+        return updateDate;
+    }
+
+    public void setUpdateDate(LocalDate updateDate) {
+        this.updateDate = updateDate;
+    }
+
+    public LocalDate getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(LocalDate createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public Counsellor getCounsellor() {
+        return counsellor;
+    }
+
+    public void setCounsellor(Counsellor counsellor) {
+        this.counsellor = counsellor;
+    }
 }

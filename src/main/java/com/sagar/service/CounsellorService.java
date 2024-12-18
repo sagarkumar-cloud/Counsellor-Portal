@@ -7,11 +7,11 @@ import com.sagar.entity.Counsellor;
 
 public interface CounsellorService {
 
-    public boolean register(CounsellorDto counsellorDto);
+    public boolean register(Counsellor counsellor);
 
     public Counsellor login(String email,String password);
 
-    public DashBoardResponse getResponse(Integer counsellorId);
+    public DashBoardResponse getDashboardResponse(Integer counsellorId);
 
     public Counsellor checkEmail(String email);
 }

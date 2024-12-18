@@ -92,3 +92,7 @@
         .login-container a:hover {
             color: #2575fc;
         }
+
+        p{
+        color:red;
+        }

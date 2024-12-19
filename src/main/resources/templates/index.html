@@ -9,8 +9,9 @@
 <div class="login-container">
     <h2>Login</h2>
     <p class="errorMsg" th:text="${eMsg}"/>
+
     <form th:object="${counsellor}" method="post" th:action="@{/login}">
-        <input type="email" placeholder="Email" th:feild="*{email}" required>
+        <input type="email" placeholder="Email" th:field="*{email}" required>
         <input type="password" placeholder="Password" th:field="*{password}" required>
         <button type="submit">Login</button>
         <a href="register">Register</a>

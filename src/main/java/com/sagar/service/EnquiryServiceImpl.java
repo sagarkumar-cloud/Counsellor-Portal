@@ -26,15 +26,16 @@ public class EnquiryServiceImpl implements EnquiryService{
     @Override
     public boolean addEnquiry(EnquiryStudent enquiryStudent, Integer counsellorId) throws Exception {
         Counsellor counsellor = counsellorsRepository.findById(counsellorId).orElse(null);
-        if(null != counsellor.getCounsellorId()){
+        if(null == counsellor.getCounsellorId()){
             throw new Exception("Counsellor Not found..!");
         }
 
         //associating counsellor to enquiry
            enquiryStudent.setCounsellor(counsellor);
         EnquiryStudent save = enquiryRepository.save(enquiryStudent);
-        if(null != save.getEnquiryId())
+        if(null != save.getEnquiryId()){
             return true;
+        }
         return false;
     }
 

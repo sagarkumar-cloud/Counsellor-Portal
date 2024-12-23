@@ -37,10 +37,7 @@ public class CounsellorController {
             HttpSession session = request.getSession(true);
             session.setAttribute("counsellorId",login.getCounsellorId());
 
-            DashBoardResponse dashboardResponse = counsellorService.getDashboardResponse(login.getCounsellorId());
-            model.addAttribute("dashboardInfo",dashboardResponse);
-
-            return "dashboard";
+            return "redirect:/dashboard";
         }
          return "index";
     }
@@ -73,5 +70,16 @@ public class CounsellorController {
             model.addAttribute("eMsg","unsuccessfully");
         }
         return "register";
+    }
+
+    @GetMapping("/dashboard")
+    public String viewDashBoard(HttpServletRequest request,Model model){
+
+        HttpSession session = request.getSession(false);
+        Integer counsellorId = (Integer)session.getAttribute("counsellorId");
+
+        DashBoardResponse dashboardResponse = counsellorService.getDashboardResponse(counsellorId);
+        model.addAttribute("dashboardResponse",dashboardResponse);
+        return"dashboardResponse";
     }
 }

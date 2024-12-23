@@ -53,17 +53,17 @@ public class CounsellorServiceImpl implements CounsellorService{
         int totalEnq= allEnq.size();
 
         int enrolled= allEnq.stream()
-                .filter(enq -> enq.equals("Enrolled"))
+                .filter(enq->enq.getStatus().equals("Enrolled"))
                 .collect(Collectors.toList())
                 .size();
 
         int lost= allEnq.stream()
-                .filter(enq->enq.equals("Lost"))
+                .filter(enq->enq.getStatus().equals("Lost"))
                 .collect(Collectors.toList())
                 .size();
 
         int open= allEnq.stream()
-                .filter(enq->enq.equals("Open"))
+                .filter(enq->enq.getStatus().equals("Open"))
                 .collect(Collectors.toList())
                 .size();
         response.setOpenEnquiry(open);

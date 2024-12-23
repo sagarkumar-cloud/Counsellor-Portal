@@ -14,4 +14,5 @@ public interface CounsellorService {
     public DashBoardResponse getDashboardResponse(Integer counsellorId);
 
     public Counsellor checkEmail(String email);
+
 }

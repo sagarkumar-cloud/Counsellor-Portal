@@ -42,6 +42,7 @@ public class EnquiryStudent {
     @JoinColumn(name="counsellor_id")
     private Counsellor counsellor;
 
+
     public Integer getEnquiryId() {
         return enquiryId;
     }

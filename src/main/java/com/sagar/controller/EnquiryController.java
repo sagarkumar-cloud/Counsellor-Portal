@@ -7,9 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,6 +28,14 @@ public class EnquiryController {
           model.addAttribute("enquiry",enquiryObj);
         return"enquiry_form";
       }
+
+
+    @GetMapping("/editEnq/{id}")
+    public String editEnquiry(@PathVariable("id") Integer enqId,Model model){
+        EnquiryStudent enquiryStudent = enquiryService.editEnquiry(enqId);
+        model.addAttribute("enquiry",enquiryStudent);
+        return "enquiry_form";
+    }
 
       @PostMapping("/addEnq")
       public String handleAddEnquiry(Model model, @ModelAttribute("enquiry") EnquiryStudent enquiry, HttpServletRequest request) throws Exception {

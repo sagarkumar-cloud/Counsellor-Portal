@@ -14,4 +14,6 @@ public interface EnquiryService {
     public List<EnquiryStudent> filterAllEnquiry(ViewEnqsFilterRequest request,Integer counsellorId);
 
     public EnquiryStudent editEnquiry(Integer enquiryId);
+
+    public EnquiryStudent updateEnquiry(Integer enquiryId,EnquiryStudent enquiryStudent);
 }

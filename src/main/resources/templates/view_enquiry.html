@@ -18,7 +18,7 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link active" aria-current="page" href="enquiry">Add enquiries</a>
-                        <a class="nav-link" href="viewEnq">View enquiries</a>
+                        <a class="nav-link" href="#">View enquiries</a>
                         <a class="nav-link" href="logout">Logout</a>
                     </div>
                 </div>
@@ -58,12 +58,12 @@
                                <option value="Class mode">class mode</option>
                            </select>
                        </td>
-                       <td><input type="submit" value="search" class="btn btn-primary"></td>
+                       <td><input type="submit" value="Search" class="btn btn-primary"></td>
                    </tr>
                </table>
            </form>
         <table class="table table-bordered table-striped">
-            <thead>
+            <thead class="table-dark">
                 <tr>
                     <th>Serial No.</th>
                     <th>Name</th>
@@ -83,7 +83,7 @@
                      <td th:text="${result.courseName}"></td>
                      <td th:text="${result.status}"></td>
                      <td>
-                         <a th:href="@{/edit/{id}(id=${id})}" >Edit</a>
+                         <a th:href="@{/editEnq/{id}(id=${result.enquiryId})}" >Edit</a>
                      </td>
                  </tr>
                   <tr th:if="${enquiry.size()==0}">

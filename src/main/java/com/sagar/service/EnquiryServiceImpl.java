@@ -73,4 +73,16 @@ public class EnquiryServiceImpl implements EnquiryService{
     public EnquiryStudent editEnquiry(Integer enquiryId) {
         return enquiryRepository.findById(enquiryId).orElse(null);
     }
+
+    @Override
+    public EnquiryStudent updateEnquiry(Integer enquiryId, EnquiryStudent enquiryStudent) {
+        EnquiryStudent enquiry = enquiryRepository.findById(enquiryId).orElse(null);
+         enquiry.setName(enquiryStudent.getName());
+         enquiry.setPhno(enquiryStudent.getPhno());
+         enquiry.setStatus(enquiryStudent.getStatus());
+         enquiry.setCourseName(enquiryStudent.getCourseName());
+         enquiry.setClassMode(enquiryStudent.getClassMode());
+        EnquiryStudent save = enquiryRepository.save(enquiry);
+        return save;
+    }
 }
